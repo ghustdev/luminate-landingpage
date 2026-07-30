@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3>Assistente de Autonomia e Navegação para Pessoas com Deficiência Visual</h3>
-  <p><i>Desenvolvido para o Programa AI Glasses Brasil (CEIA/UFG/FUNAPE + Meta)</i></p>
+  <p><i>Desenvolvido para o Programa AI Glasses Brasil (CEIA/UFG/FUNAPE + Meta) </i></p>
 </div>
 
 ---
