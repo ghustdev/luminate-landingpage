@@ -1,4 +1,4 @@
-# 🕶️ Luminate
+# ![alt text](logo.svg) Luminate
 
 <div align="center">
   <h3>Assistente de Autonomia e Navegação para Pessoas com Deficiência Visual</h3>
