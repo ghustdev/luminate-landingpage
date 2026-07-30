@@ -32,18 +32,19 @@ function Waveform({ compact = false }: { compact?: boolean }) {
       {Array.from({ length: bars }).map((_, i) => {
         const t = i / (bars - 1);
         const env = Math.sin(Math.PI * t) ** 0.8;
-        const h = (14 + env * 92 * (0.55 + 0.45 * Math.sin(i * 1.7))) * (compact ? 0.25 : 1);
+        const r2 = (n: number) => Math.round(n * 100) / 100;
+        const h = r2((14 + env * 92 * (0.55 + 0.45 * Math.sin(i * 1.7))) * (compact ? 0.25 : 1));
         return (
           <rect
             key={i}
             className="lum-bar"
             x={i * 10 + 2.5}
-            y={60 - Math.abs(h) / 2}
+            y={r2(60 - Math.abs(h) / 2)}
             width="4"
-            height={Math.max(4, Math.abs(h))}
+            height={r2(Math.max(4, Math.abs(h)))}
             rx="2"
             fill={i % 6 === 0 ? "var(--azul-meta)" : "var(--azul-profundo)"}
-            opacity={0.25 + env * 0.75}
+            opacity={r2(0.25 + env * 0.75)}
             style={{ animationDelay: `${(i % 12) * 0.12}s` }}
           />
         );
