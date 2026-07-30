@@ -4,6 +4,30 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ---- Luminate brand tokens ---- */
+:root {
+  --azul-meta: oklch(0.522 0.213 259.1); /* #0064E0 */
+  --azul-meta-hover: oklch(0.46 0.19 259.1);
+  --azul-profundo: oklch(0.244 0.078 265.5); /* #0A1F44 */
+  --branco: oklch(1 0 0);
+  --cinza-nevoa: oklch(0.966 0.004 247.9); /* #F2F4F7 */
+  --cinza-grafite: oklch(0.51 0.023 257.4); /* #5B6472 */
+  --preto-quase: oklch(0.19 0.011 274); /* #12141A */
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-azul-meta: var(--azul-meta);
+  --color-azul-profundo: var(--azul-profundo);
+  --color-branco: var(--branco);
+  --color-cinza-nevoa: var(--cinza-nevoa);
+  --color-cinza-grafite: var(--cinza-grafite);
+  --color-preto-quase: var(--preto-quase);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
 /*
  * Design system definition.
  *
@@ -140,5 +164,62 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--azul-meta);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* Signature waveform motion */
+@keyframes lum-wave {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.lum-bar {
+  transform-origin: center;
+  animation: lum-wave 2.4s ease-in-out infinite;
+}
+
+.lum-seam {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--azul-meta) 45%, transparent),
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lum-bar {
+    animation: none;
+    transform: scaleY(0.6);
+  }
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
 }
