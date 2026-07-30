@@ -7,6 +7,10 @@
 
 ---
 
+[luminate-landingpage.vercel.app](https://luminate-landingpage.vercel.app/)
+
+---
+
 ## 📖 Sobre o Projeto
 
 Luminate é uma solução de autonomia e navegação para pessoas cegas ou com baixa visão, usando os AI Glasses da Meta como ponte *hands-free* entre o usuário e o ambiente ao seu redor[cite: 2]. O projeto resolve o problema da percepção espacial contínua e leitura do dia a dia sem o estigma associado a equipamentos médicos visíveis[cite: 2].
